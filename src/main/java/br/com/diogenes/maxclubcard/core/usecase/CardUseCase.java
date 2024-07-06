@@ -1,7 +1,7 @@
-package br.com.diogenes.maxclubcard.core.card.usecase;
+package br.com.diogenes.maxclubcard.core.usecase;
 
-import br.com.diogenes.maxclubcard.core.card.domain.Card;
-import br.com.diogenes.maxclubcard.core.card.gateway.CardGateway;
+import br.com.diogenes.maxclubcard.core.domain.card.Card;
+import br.com.diogenes.maxclubcard.core.gateway.CardGateway;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -16,8 +16,8 @@ public class CardUseCase {
     }
 
         public void registerCard(Card card) {
-            log.info("Registering card: " + card.number());
+            log.info("Registering card: " + card.cardNumber());
             cardGateway.registerCard(card);
-            log.info("Card registered: " + card.number());
+            log.info("Card registered: " + card.cardNumber());
         }
 }

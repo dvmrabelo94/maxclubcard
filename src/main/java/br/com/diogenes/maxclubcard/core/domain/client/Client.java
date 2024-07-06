@@ -1,4 +1,4 @@
-package br.com.diogenes.maxclubcard.core.client.domain;
+package br.com.diogenes.maxclubcard.core.domain.client;
 
 import java.time.LocalDate;
 

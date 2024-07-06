@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public record CardRequest(
         Long id,
-        String number,
+        String cardNumber,
         LocalDate expirationDate,
         String typeCard,
         String brandCard) {

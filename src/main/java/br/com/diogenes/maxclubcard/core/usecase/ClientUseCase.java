@@ -1,7 +1,7 @@
-package br.com.diogenes.maxclubcard.core.client.usecase;
+package br.com.diogenes.maxclubcard.core.usecase;
 
-import br.com.diogenes.maxclubcard.core.client.domain.Client;
-import br.com.diogenes.maxclubcard.core.client.gateway.ClientGateway;
+import br.com.diogenes.maxclubcard.core.domain.client.Client;
+import br.com.diogenes.maxclubcard.core.gateway.ClientGateway;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
