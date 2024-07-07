@@ -7,5 +7,6 @@ public record CardRequest(
         String cardNumber,
         LocalDate expirationDate,
         String typeCard,
-        String brandCard) {
+        String brandCard,
+        String document) {
 }

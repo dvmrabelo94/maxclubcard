@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 public record TransactionRequest(
-        Long luckyNumber,
+        String transactionNumber,
         String cardNumber,
         BigDecimal value,
         LocalDateTime transactionDate) {

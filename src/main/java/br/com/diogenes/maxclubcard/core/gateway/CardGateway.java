@@ -1,10 +1,14 @@
 package br.com.diogenes.maxclubcard.core.gateway;
 
 import br.com.diogenes.maxclubcard.core.domain.card.Card;
+import br.com.diogenes.maxclubcard.core.domain.card.CardOut;
+import br.com.diogenes.maxclubcard.dataprovider.card.entity.CardEntity;
 
 public interface CardGateway {
 
-    void registerCard(Card card);
+    CardOut registerCard(Card card);
 
-    Card getCard(String number);
+    CardEntity getCardEntity(String number);
+
+    CardOut getCard(String number);
 }
