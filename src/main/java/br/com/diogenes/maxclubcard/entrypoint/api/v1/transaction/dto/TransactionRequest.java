@@ -8,4 +8,18 @@ public record TransactionRequest(
         String cardNumber,
         BigDecimal value,
         LocalDateTime transactionDate) {
+
+    public TransactionRequest {
+        checkNotNull(transactionNumber, "transactionNumber");
+        checkNotNull(cardNumber, "cardNumber");
+        checkNotNull(value, "value");
+        checkNotNull(transactionDate, "transactionDate");
+
+    }
+
+    private static <T> void checkNotNull(T value, String fieldName) {
+        if (value == null) {
+            throw new IllegalArgumentException(fieldName + " não pode ser nulo");
+        }
+    }
 }

@@ -21,9 +21,6 @@ public class DrawWeeklyImpl implements DrawWeekly {
         this.luckyNumberUseCase = luckyNumberUseCase;
     }
 
-    @Value("${schedule.weekly.cron}")
-    private String cronExpression;
-
     @Value("${maxclub.topic}")
     private String topic;
 
