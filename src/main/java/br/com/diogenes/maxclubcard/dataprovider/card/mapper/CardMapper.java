@@ -19,6 +19,7 @@ public class CardMapper {
 
     public static CardOut toDomain(CardEntity cardEntity) {
         return new CardOut(
+                cardEntity.getId(),
                 cardEntity.getCardNumber(),
                 cardEntity.getExpirationDate(),
                 cardEntity.getTypeCard(),

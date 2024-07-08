@@ -12,6 +12,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.time.YearMonth;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 
 @Slf4j
 @Service
@@ -38,8 +41,14 @@ public class TransactionUseCaseImpl implements TransactionUseCase {
     }
 
     private boolean isCardValid(CardOut card) {
-        return card != null &&
-                (card.expirationDate() != null && card.expirationDate().isAfter(LocalDate.now())) &&
-                (card.brandCard() != null && card.brandCard().equalsIgnoreCase(MAXCLUBCARD));
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/yy");
+
+        try {
+            YearMonth cardExpiration = YearMonth.parse(card.expirationDate(), formatter);
+            YearMonth currentMonth = YearMonth.now();
+            return cardExpiration.isBefore(currentMonth) && card.brandCard().equals(MAXCLUBCARD);
+        } catch (DateTimeParseException e) {
+            throw new IllegalArgumentException("Invalid date format. Please use MM/yy.");
+        }
     }
 }

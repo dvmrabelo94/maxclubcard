@@ -1,10 +1,8 @@
 package br.com.diogenes.maxclubcard.core.domain.card;
 
-import java.time.LocalDate;
-
 public record Card(
         String cardNumber,
-        LocalDate expirationDate,
+        String expirationDate,
         String typeCard,
         String brandCard,
         String document

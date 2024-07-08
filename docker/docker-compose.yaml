@@ -48,7 +48,7 @@ services:
       kafka-topics.sh --create --if-not-exists --topic maxclub-kafka-topic --replication-factor=1 --partitions=3 --bootstrap-server kafka:9092
       "
   db:
-    image: mysql:5.7
+    image: mysql:8.0
     restart: always
     environment:
       MYSQL_DATABASE: 'maxclubcard'

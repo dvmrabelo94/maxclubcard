@@ -20,6 +20,13 @@ public class ClientMapperEntrypoint {
 
     public static ClientResponse toClientResponse(ClientOut client) {
         return new ClientResponse(
+                client.id(),
+                client.name(),
+                client.document(),
+                client.birth(),
+                client.gender(),
+                client.email(),
+                client.phoneNumber()
         );
     }
 }

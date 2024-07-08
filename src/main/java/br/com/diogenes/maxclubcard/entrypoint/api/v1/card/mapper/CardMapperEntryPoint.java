@@ -19,6 +19,12 @@ public class CardMapperEntryPoint {
 
     public static CardResponse toCardResponse(CardOut cardOut) {
         return new CardResponse(
+                cardOut.id(),
+                cardOut.number(),
+                cardOut.expirationDate(),
+                cardOut.typeCard(),
+                cardOut.brandCard(),
+                cardOut.document()
         );
     }
 }

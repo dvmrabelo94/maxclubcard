@@ -23,8 +23,8 @@ public class CardEntity {
     @Column(name = "card_number", nullable = false, unique = true, length = 20)
     private String cardNumber;
 
-    @Column(name = "expiration_date", nullable = false)
-    private LocalDate expirationDate;
+    @Column(name = "expiration_date", nullable = false, length = 5)
+    private String expirationDate;
 
     @Column(name = "type_card", nullable = false, length = 50)
     private String typeCard;

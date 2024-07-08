@@ -13,16 +13,19 @@ public class ClientMapper {
                 .birth(client.birth())
                 .gender(client.gender())
                 .document(client.document())
+                .phoneNumber(client.phoneNumber())
                 .build();
     }
 
     public static ClientOut toDomain(ClientEntity clientEntity) {
         return new ClientOut(
+                clientEntity.getId(),
                 clientEntity.getName(),
                 clientEntity.getEmail(),
                 clientEntity.getBirth(),
                 clientEntity.getGender(),
-                clientEntity.getDocument()
+                clientEntity.getDocument(),
+                clientEntity.getPhoneNumber()
         );
     }
 }
