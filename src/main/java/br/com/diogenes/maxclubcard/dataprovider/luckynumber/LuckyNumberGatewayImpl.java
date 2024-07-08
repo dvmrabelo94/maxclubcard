@@ -31,4 +31,19 @@ public class LuckyNumberGatewayImpl implements LuckyNumberGateway {
                         listLuckNumber.add(LuckyNumberMapper.toDomain(luckyNumberEntity)));
         return listLuckNumber;
     }
+
+    @Override
+    public List<LuckyNumber> findByIsValid() {
+        return luckyNumberRepository.findByIsValid(true)
+                .stream()
+                .map(LuckyNumberMapper::toDomain)
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public void updateAllByLuckyNumbers(Boolean isValid, List<String> luckyNumber) {
+        luckyNumberRepository.updateAllByLuckyNumbers(isValid, luckyNumber);
+    }
+
+
 }

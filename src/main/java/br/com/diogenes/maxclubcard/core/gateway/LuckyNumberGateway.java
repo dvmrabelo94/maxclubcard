@@ -9,4 +9,8 @@ import java.util.List;
 public interface LuckyNumberGateway {
 
     List<LuckyNumber> insertAll(List<LuckyNumberEntity> luckyNumberList, TransactionEntity transactionEntity);
+
+    List<LuckyNumber> findByIsValid();
+
+    void updateAllByLuckyNumbers(Boolean isValid, List<String> luckyNumber);
 }
