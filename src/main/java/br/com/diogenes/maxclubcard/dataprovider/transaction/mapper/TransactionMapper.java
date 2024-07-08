@@ -1,17 +1,12 @@
-package br.com.diogenes.maxclubcard.dataprovider.mapper;
+package br.com.diogenes.maxclubcard.dataprovider.transaction.mapper;
 
-import br.com.diogenes.maxclubcard.core.domain.card.Card;
-import br.com.diogenes.maxclubcard.core.domain.client.Client;
 import br.com.diogenes.maxclubcard.core.domain.luckynumber.LuckyNumber;
 import br.com.diogenes.maxclubcard.core.domain.transaction.Transaction;
 import br.com.diogenes.maxclubcard.core.domain.transaction.TransactionOut;
 import br.com.diogenes.maxclubcard.dataprovider.card.entity.CardEntity;
-import br.com.diogenes.maxclubcard.dataprovider.client.entity.ClientEntity;
-import br.com.diogenes.maxclubcard.dataprovider.luckynumber.entity.LuckyNumberEntity;
 import br.com.diogenes.maxclubcard.dataprovider.transaction.entity.TransactionEntity;
 
 import java.util.List;
-import java.util.UUID;
 
 public class TransactionMapper {
 

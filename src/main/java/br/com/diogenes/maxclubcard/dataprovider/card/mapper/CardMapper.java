@@ -1,8 +1,7 @@
-package br.com.diogenes.maxclubcard.dataprovider.mapper;
+package br.com.diogenes.maxclubcard.dataprovider.card.mapper;
 
 import br.com.diogenes.maxclubcard.core.domain.card.Card;
 import br.com.diogenes.maxclubcard.core.domain.card.CardOut;
-import br.com.diogenes.maxclubcard.core.domain.client.Client;
 import br.com.diogenes.maxclubcard.dataprovider.card.entity.CardEntity;
 import br.com.diogenes.maxclubcard.dataprovider.client.entity.ClientEntity;
 

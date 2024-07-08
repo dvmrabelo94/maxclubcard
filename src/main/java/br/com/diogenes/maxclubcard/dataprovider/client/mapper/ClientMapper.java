@@ -1,4 +1,4 @@
-package br.com.diogenes.maxclubcard.dataprovider.mapper;
+package br.com.diogenes.maxclubcard.dataprovider.client.mapper;
 
 import br.com.diogenes.maxclubcard.core.domain.client.Client;
 import br.com.diogenes.maxclubcard.core.domain.client.ClientOut;

@@ -7,6 +7,7 @@ import br.com.diogenes.maxclubcard.core.domain.transaction.TransactionOut;
 import br.com.diogenes.maxclubcard.core.gateway.CardGateway;
 import br.com.diogenes.maxclubcard.core.gateway.TransactionGateway;
 import br.com.diogenes.maxclubcard.core.usecase.TransactionUseCase;
+import br.com.diogenes.maxclubcard.entrypoint.exception.BusinessException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -31,7 +32,7 @@ public class TransactionUseCaseImpl implements TransactionUseCase {
         var card = cardGateway.getCard(transaction.cardNumber());
         if (!isCardValid(card)) {
             log.error("Transaction with card is invalid: " + transaction.cardNumber());
-            throw new IllegalArgumentException("Transaction with card is invalid");
+            throw new BusinessException("Transaction with card is invalid");
         }
         return transactionGateway.registerTransaction(transaction);
     }

@@ -1,4 +1,4 @@
-package br.com.diogenes.maxclubcard.dataprovider.mapper;
+package br.com.diogenes.maxclubcard.dataprovider.luckynumber.mapper;
 
 import br.com.diogenes.maxclubcard.core.domain.luckynumber.LuckyNumber;
 import br.com.diogenes.maxclubcard.dataprovider.luckynumber.entity.LuckyNumberEntity;
