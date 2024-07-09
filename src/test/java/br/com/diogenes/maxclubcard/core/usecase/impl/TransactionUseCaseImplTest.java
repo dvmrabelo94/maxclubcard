@@ -4,8 +4,10 @@ import br.com.diogenes.maxclubcard.core.domain.card.CardOut;
 import br.com.diogenes.maxclubcard.core.domain.luckynumber.LuckyNumber;
 import br.com.diogenes.maxclubcard.core.domain.transaction.Transaction;
 import br.com.diogenes.maxclubcard.core.domain.transaction.TransactionOut;
+import br.com.diogenes.maxclubcard.core.gateway.BrandCardGateway;
 import br.com.diogenes.maxclubcard.core.gateway.CardGateway;
 import br.com.diogenes.maxclubcard.core.gateway.TransactionGateway;
+import br.com.diogenes.maxclubcard.dataprovider.brandcard.entity.BrandEntity;
 import br.com.diogenes.maxclubcard.entrypoint.exception.BusinessException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -30,6 +32,9 @@ class TransactionUseCaseImplTest {
     @Mock
     private CardGateway cardGateway;
 
+    @Mock
+    private BrandCardGateway brandCardGateway;
+
     @InjectMocks
     private TransactionUseCaseImpl transactionUseCase;
 
@@ -46,7 +51,7 @@ class TransactionUseCaseImplTest {
 
         when(cardGateway.getCard(any())).thenReturn(cardOut);
         when(transactionGateway.registerTransaction(any())).thenReturn(transactionOut);
-
+        when(brandCardGateway.findAllByIsActiveTrue()).thenReturn(List.of(new BrandEntity(1L, "MAXCLUBCARD", true)));
         transactionUseCase.registerTransaction(transaction);
 
         verify(transactionGateway).registerTransaction(any());
@@ -58,6 +63,7 @@ class TransactionUseCaseImplTest {
         CardOut cardOut = new CardOut(1l, "1234",  "12/23", "INVALID", "Elo", "1234");
 
         when(cardGateway.getCard(any())).thenReturn(cardOut);
+        when(brandCardGateway.findAllByIsActiveTrue()).thenReturn(List.of());
 
         assertThrows(BusinessException.class, () -> transactionUseCase.registerTransaction(transaction));
     }
