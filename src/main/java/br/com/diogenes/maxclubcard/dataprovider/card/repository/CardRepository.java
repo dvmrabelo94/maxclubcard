@@ -9,5 +9,5 @@ import org.springframework.stereotype.Repository;
 @Transactional
 public interface CardRepository extends CrudRepository<CardEntity, Long> {
 
-    CardEntity findByCardNumber(String number);
+    CardEntity findByCardNumber(String cardNumber);
 }

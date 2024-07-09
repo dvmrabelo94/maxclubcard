@@ -22,7 +22,7 @@ public class LuckyNumberEntity {
     private String luckyNumber;
 
     @Column(name = "is_valid", nullable = false, columnDefinition = "boolean default true")
-    private boolean isValid = true;
+    private boolean isValid;
 
     @ManyToOne
     @JoinColumn(name = "id_transaction", nullable = false)

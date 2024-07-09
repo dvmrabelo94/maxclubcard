@@ -18,7 +18,6 @@ import java.util.stream.Collectors;
 @Slf4j
 public class LuckyNumberGatewayImpl implements LuckyNumberGateway {
 
-    public static final String EXCEPTION_MESSAGE = "M=insertAll, message=Error inserting all lucky number, exceptionMessage={}";
     private final LuckyNumberRepository luckyNumberRepository;
 
     public LuckyNumberGatewayImpl(LuckyNumberRepository luckyNumberRepository) {

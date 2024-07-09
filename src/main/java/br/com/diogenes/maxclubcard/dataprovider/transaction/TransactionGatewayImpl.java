@@ -50,7 +50,7 @@ public class TransactionGatewayImpl implements TransactionGateway {
 
     private List<LuckyNumberEntity> generateLuckyNumberList(TransactionEntity transaction) {
         log.info("M=generateLuckyNumberList, message=Generating lucky number list, transaction={}", transaction);
-        int numberOfLuckyNumbers = transaction.getValue().remainder(BigDecimal.valueOf(150)).intValue();
+        int numberOfLuckyNumbers = transaction.getValue().divideToIntegralValue(BigDecimal.valueOf(150)).intValue();
         List<LuckyNumberEntity> luckyNumbers = new ArrayList<>();
 
         for (int i = 0; i < numberOfLuckyNumbers; i++) {
