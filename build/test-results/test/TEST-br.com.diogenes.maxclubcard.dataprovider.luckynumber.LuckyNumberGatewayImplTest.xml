@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="br.com.diogenes.maxclubcard.dataprovider.luckynumber.LuckyNumberGatewayImplTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-07-09T03:28:59" hostname="PPM-JAMF-10280" time="0.082">
+  <properties/>
+  <testcase name="shouldReturnLuckyNumberListWhenFindByIsValidIsCalled()" classname="br.com.diogenes.maxclubcard.dataprovider.luckynumber.LuckyNumberGatewayImplTest" time="0.066"/>
+  <testcase name="shouldCallUpdateAllByLuckyNumbersInRepositoryWhenUpdateAllByLuckyNumbersIsCalled()" classname="br.com.diogenes.maxclubcard.dataprovider.luckynumber.LuckyNumberGatewayImplTest" time="0.003"/>
+  <testcase name="shouldCallInsertAllInRepositoryWhenInsertAllIsCalled()" classname="br.com.diogenes.maxclubcard.dataprovider.luckynumber.LuckyNumberGatewayImplTest" time="0.011"/>
+  <system-out><![CDATA[2024-07-09T00:29:00.002-03:00  INFO 79319 --- [maxclubcard] [    Test worker] b.c.d.m.d.l.LuckyNumberGatewayImpl       : M=findByIsValid, message=Find all lucky number by is valid
+2024-07-09T00:29:00.003-03:00  INFO 79319 --- [maxclubcard] [    Test worker] b.c.d.m.d.l.LuckyNumberGatewayImpl       : M=findByIsValid, message=Find all lucky number by is valid with success, luckyNumberList=[LuckyNumber[luckyNumber=1234, isValid=true]]
+2024-07-09T00:29:00.008-03:00  INFO 79319 --- [maxclubcard] [    Test worker] b.c.d.m.d.l.LuckyNumberGatewayImpl       : M=updateAllByLuckyNumbers, message=Update all lucky number by is valid, isValid=true, luckyNumber=[1234]
+2024-07-09T00:29:00.008-03:00  INFO 79319 --- [maxclubcard] [    Test worker] b.c.d.m.d.l.LuckyNumberGatewayImpl       : M=updateAllByLuckyNumbers, message=Update all lucky number by is valid with success
+2024-07-09T00:29:00.013-03:00  INFO 79319 --- [maxclubcard] [    Test worker] b.c.d.m.d.l.LuckyNumberGatewayImpl       : M=insertAll, message=Start insert all lucky number, luckyNumberList=[LuckyNumberEntity(id=1, luckyNumber=1234, isValid=true, transaction=TransactionEntity(id=1, transactionDate=2024-07-09T00:29:00.012645, transactionNumber=1234, value=300.0, card=null))], transactionEntity=TransactionEntity(id=1, transactionDate=2024-07-09T00:29:00.012645, transactionNumber=1234, value=300.0, card=null)
+2024-07-09T00:29:00.020-03:00  INFO 79319 --- [maxclubcard] [    Test worker] b.c.d.m.d.l.LuckyNumberGatewayImpl       : M=insertAll, message=Insert all lucky number with success, listLuckNumber=[LuckyNumber[luckyNumber=1234, isValid=true]]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

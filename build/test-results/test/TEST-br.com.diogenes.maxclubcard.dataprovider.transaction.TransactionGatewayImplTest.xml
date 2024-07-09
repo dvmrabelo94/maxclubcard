@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="br.com.diogenes.maxclubcard.dataprovider.transaction.TransactionGatewayImplTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-07-09T03:29:00" hostname="PPM-JAMF-10280" time="0.064">
+  <properties/>
+  <testcase name="shouldCallRegisterTransactionInRepositoryWhenRegisterTransactionIsCalled()" classname="br.com.diogenes.maxclubcard.dataprovider.transaction.TransactionGatewayImplTest" time="0.064"/>
+  <system-out><![CDATA[2024-07-09T00:29:00.204-03:00  INFO 79319 --- [maxclubcard] [    Test worker] b.c.d.m.d.t.TransactionGatewayImpl       : M=registerTransaction, message=Registering transaction
+2024-07-09T00:29:00.205-03:00  INFO 79319 --- [maxclubcard] [    Test worker] b.c.d.m.d.t.TransactionGatewayImpl       : M=generateLuckyNumberList, message=Generating lucky number list, transaction=TransactionEntity(id=null, transactionDate=2024-07-09T00:29:00.203628, transactionNumber=1234, value=300.0, card=null)
+2024-07-09T00:29:00.206-03:00  INFO 79319 --- [maxclubcard] [    Test worker] b.c.d.m.d.t.TransactionGatewayImpl       : M=generateLuckyNumberList, message=Lucky number list generated with success, luckyNumbers=[LuckyNumberEntity(id=null, luckyNumber=f89a8ef1-1079-4c01-b8f4-d2ace3bd44e4, isValid=true, transaction=TransactionEntity(id=null, transactionDate=2024-07-09T00:29:00.203628, transactionNumber=1234, value=300.0, card=null)), LuckyNumberEntity(id=null, luckyNumber=4409d985-150a-4744-850c-96658b2acea5, isValid=true, transaction=TransactionEntity(id=null, transactionDate=2024-07-09T00:29:00.203628, transactionNumber=1234, value=300.0, card=null))]
+2024-07-09T00:29:00.206-03:00  INFO 79319 --- [maxclubcard] [    Test worker] b.c.d.m.d.t.TransactionGatewayImpl       : M=registerTransaction, message=Transaction registered with success, transactionEntity=TransactionEntity(id=null, transactionDate=2024-07-09T00:29:00.203628, transactionNumber=1234, value=300.0, card=null)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

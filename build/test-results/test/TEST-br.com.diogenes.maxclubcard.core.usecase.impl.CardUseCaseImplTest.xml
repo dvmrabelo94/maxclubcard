@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="br.com.diogenes.maxclubcard.core.usecase.impl.CardUseCaseImplTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-07-09T03:28:57" hostname="PPM-JAMF-10280" time="0.19">
+  <properties/>
+  <testcase name="shouldThrowBusinessExceptionWhenCardIsInvalid()" classname="br.com.diogenes.maxclubcard.core.usecase.impl.CardUseCaseImplTest" time="0.15"/>
+  <testcase name="shouldCallRegisterCardInGatewayWhenRegisterCardIsCalled()" classname="br.com.diogenes.maxclubcard.core.usecase.impl.CardUseCaseImplTest" time="0.037"/>
+  <system-out><![CDATA[2024-07-09T00:28:57.268-03:00  INFO 79319 --- [maxclubcard] [    Test worker] b.c.d.m.c.usecase.impl.CardUseCaseImpl   : Registering card: 1234
+2024-07-09T00:28:57.272-03:00 ERROR 79319 --- [maxclubcard] [    Test worker] b.c.d.m.c.usecase.impl.CardUseCaseImpl   : Card is invalid: 1234
+2024-07-09T00:28:57.300-03:00  INFO 79319 --- [maxclubcard] [    Test worker] b.c.d.m.c.usecase.impl.CardUseCaseImpl   : Registering card: 1234
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

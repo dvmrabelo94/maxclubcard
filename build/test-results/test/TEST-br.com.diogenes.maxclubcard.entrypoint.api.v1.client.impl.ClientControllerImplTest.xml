@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="br.com.diogenes.maxclubcard.entrypoint.api.v1.client.impl.ClientControllerImplTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-07-09T03:29:02" hostname="PPM-JAMF-10280" time="0.004">
+  <properties/>
+  <testcase name="shouldCallRegisterClientInFacadeWhenRegisterClientIsCalled()" classname="br.com.diogenes.maxclubcard.entrypoint.api.v1.client.impl.ClientControllerImplTest" time="0.004"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

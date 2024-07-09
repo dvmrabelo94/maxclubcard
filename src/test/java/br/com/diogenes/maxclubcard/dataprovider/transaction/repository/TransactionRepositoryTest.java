@@ -32,13 +32,29 @@ class TransactionRepositoryTest {
 
     @Test
     void testSaveAndFindByTransactionNumber() {
-        ClientEntity clientEntity = new ClientEntity(1l, "Joe", "12345678901", LocalDate.of(1990, 1, 1), "Masculino", "joe@mail.com", "77112234455");
-        CardEntity cardEntity = new CardEntity(1l, "1234567890123456","12/23", "Credit","MAXCLUBCARD",
-                clientEntity);
-        TransactionEntity transactionEntity = new TransactionEntity(1l, LocalDateTime.now(), "1234", BigDecimal.valueOf(100.0), cardEntity);
+        ClientEntity clientEntity =  ClientEntity.builder().name("Joe")
+                .document("12345678901")
+                .birth(LocalDate.of(1990, 1, 1))
+                .gender("Masculino")
+                .email("joe@mail.com")
+                .phoneNumber("77112234455").build();
+        CardEntity cardEntity =  CardEntity.builder()
+                .cardNumber("1234567890123456")
+                .expirationDate("12/23")
+                .typeCard("Credit")
+                .brandCard("MAXCLUBCARD")
+                .client(clientEntity).build();
 
         clientRepository.save(clientEntity);
+        clientRepository.save(clientEntity);
         cardRepository.save(cardEntity);
+
+        TransactionEntity transactionEntity = TransactionEntity.builder()
+                .transactionDate(LocalDateTime.now())
+                .transactionNumber("1234")
+                .value(BigDecimal.valueOf(100.0))
+                .card(cardEntity).build();
+
         transactionRepository.save(transactionEntity);
 
         TransactionEntity foundTransaction = transactionRepository.findById(1l).get();

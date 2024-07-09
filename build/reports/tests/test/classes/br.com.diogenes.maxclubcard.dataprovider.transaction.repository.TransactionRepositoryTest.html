@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - TransactionRepositoryTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>TransactionRepositoryTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/br.com.diogenes.maxclubcard.dataprovider.transaction.repository.html">br.com.diogenes.maxclubcard.dataprovider.transaction.repository</a> &gt; TransactionRepositoryTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.611s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+<li>
+<a href="#tab2">Standard error</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">testSaveAndFindByTransactionNumber()</td>
+<td class="success">0.611s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>00:28:53.018 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [br.com.diogenes.maxclubcard.dataprovider.transaction.repository.TransactionRepositoryTest]: TransactionRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+00:28:53.156 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration br.com.diogenes.maxclubcard.MaxclubcardApplication for test class br.com.diogenes.maxclubcard.dataprovider.transaction.repository.TransactionRepositoryTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.1)
+
+2024-07-09T00:28:53.454-03:00  INFO 79319 --- [maxclubcard] [    Test worker] b.c.d.m.d.t.r.TransactionRepositoryTest  : Starting TransactionRepositoryTest using Java 21.0.3 with PID 79319 (started by diogenesrabelo in /Users/diogenesrabelo/Documents/maxclub/maxclubcard)
+2024-07-09T00:28:53.455-03:00  INFO 79319 --- [maxclubcard] [    Test worker] b.c.d.m.d.t.r.TransactionRepositoryTest  : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2024-07-09T00:28:53.846-03:00  INFO 79319 --- [maxclubcard] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-09T00:28:53.936-03:00  INFO 79319 --- [maxclubcard] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 82 ms. Found 4 JPA repository interfaces.
+2024-07-09T00:28:53.979-03:00  INFO 79319 --- [maxclubcard] [    Test worker] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2024-07-09T00:28:54.098-03:00  INFO 79319 --- [maxclubcard] [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:018d0925-4646-4523-ab5b-0d9c5b3f3f99;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2024-07-09T00:28:54.363-03:00  INFO 79319 --- [maxclubcard] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-09T00:28:54.407-03:00  INFO 79319 --- [maxclubcard] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-07-09T00:28:54.434-03:00  INFO 79319 --- [maxclubcard] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-09T00:28:54.701-03:00  INFO 79319 --- [maxclubcard] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-09T00:28:54.738-03:00  WARN 79319 --- [maxclubcard] [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-07-09T00:28:55.810-03:00  INFO 79319 --- [maxclubcard] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-09T00:28:55.857-03:00 DEBUG 79319 --- [maxclubcard] [    Test worker] org.hibernate.SQL                        : create table card (id bigint generated by default as identity, brand_card varchar(50) not null, card_number varchar(20) not null, expiration_date varchar(5) not null, type_card varchar(50) not null, id_client bigint not null, primary key (id))
+Hibernate: create table card (id bigint generated by default as identity, brand_card varchar(50) not null, card_number varchar(20) not null, expiration_date varchar(5) not null, type_card varchar(50) not null, id_client bigint not null, primary key (id))
+2024-07-09T00:28:55.868-03:00 DEBUG 79319 --- [maxclubcard] [    Test worker] org.hibernate.SQL                        : create table client (id bigint generated by default as identity, birth date not null, document varchar(20) not null, email varchar(100) not null, gender varchar(10) not null, name varchar(100) not null, phone_number varchar(20) not null, primary key (id))
+Hibernate: create table client (id bigint generated by default as identity, birth date not null, document varchar(20) not null, email varchar(100) not null, gender varchar(10) not null, name varchar(100) not null, phone_number varchar(20) not null, primary key (id))
+2024-07-09T00:28:55.870-03:00 DEBUG 79319 --- [maxclubcard] [    Test worker] org.hibernate.SQL                        : create table lucky_number (id bigint generated by default as identity, is_valid boolean default true not null, lucky_number varchar(36) not null, id_transaction bigint not null, primary key (id))
+Hibernate: create table lucky_number (id bigint generated by default as identity, is_valid boolean default true not null, lucky_number varchar(36) not null, id_transaction bigint not null, primary key (id))
+2024-07-09T00:28:55.871-03:00 DEBUG 79319 --- [maxclubcard] [    Test worker] org.hibernate.SQL                        : create table transaction (id bigint generated by default as identity, transaction_date timestamp(6) not null, transaction_number varchar(50) not null, transaction_value numeric(19,4) not null, id_card bigint not null, primary key (id))
+Hibernate: create table transaction (id bigint generated by default as identity, transaction_date timestamp(6) not null, transaction_number varchar(50) not null, transaction_value numeric(19,4) not null, id_card bigint not null, primary key (id))
+2024-07-09T00:28:55.872-03:00 DEBUG 79319 --- [maxclubcard] [    Test worker] org.hibernate.SQL                        : alter table if exists card drop constraint if exists UKby1nk98m2hq5onhl68bo09sc1
+Hibernate: alter table if exists card drop constraint if exists UKby1nk98m2hq5onhl68bo09sc1
+2024-07-09T00:28:55.873-03:00 DEBUG 79319 --- [maxclubcard] [    Test worker] org.hibernate.SQL                        : alter table if exists card add constraint UKby1nk98m2hq5onhl68bo09sc1 unique (card_number)
+Hibernate: alter table if exists card add constraint UKby1nk98m2hq5onhl68bo09sc1 unique (card_number)
+2024-07-09T00:28:55.876-03:00 DEBUG 79319 --- [maxclubcard] [    Test worker] org.hibernate.SQL                        : alter table if exists client drop constraint if exists UK90ans9v7nohqmaorc4wg4tmvv
+Hibernate: alter table if exists client drop constraint if exists UK90ans9v7nohqmaorc4wg4tmvv
+2024-07-09T00:28:55.876-03:00 DEBUG 79319 --- [maxclubcard] [    Test worker] org.hibernate.SQL                        : alter table if exists client add constraint UK90ans9v7nohqmaorc4wg4tmvv unique (document)
+Hibernate: alter table if exists client add constraint UK90ans9v7nohqmaorc4wg4tmvv unique (document)
+2024-07-09T00:28:55.877-03:00 DEBUG 79319 --- [maxclubcard] [    Test worker] org.hibernate.SQL                        : alter table if exists lucky_number drop constraint if exists UKau8mckqx7f7ugmupsq7wegq5i
+Hibernate: alter table if exists lucky_number drop constraint if exists UKau8mckqx7f7ugmupsq7wegq5i
+2024-07-09T00:28:55.877-03:00 DEBUG 79319 --- [maxclubcard] [    Test worker] org.hibernate.SQL                        : alter table if exists lucky_number add constraint UKau8mckqx7f7ugmupsq7wegq5i unique (lucky_number)
+Hibernate: alter table if exists lucky_number add constraint UKau8mckqx7f7ugmupsq7wegq5i unique (lucky_number)
+2024-07-09T00:28:55.878-03:00 DEBUG 79319 --- [maxclubcard] [    Test worker] org.hibernate.SQL                        : alter table if exists card add constraint FKeft3x99s70wdfpy52nc19j134 foreign key (id_client) references client
+Hibernate: alter table if exists card add constraint FKeft3x99s70wdfpy52nc19j134 foreign key (id_client) references client
+2024-07-09T00:28:55.882-03:00 DEBUG 79319 --- [maxclubcard] [    Test worker] org.hibernate.SQL                        : alter table if exists lucky_number add constraint FKol5xendjnbc5cyc76chhe5bt0 foreign key (id_transaction) references transaction
+Hibernate: alter table if exists lucky_number add constraint FKol5xendjnbc5cyc76chhe5bt0 foreign key (id_transaction) references transaction
+2024-07-09T00:28:55.884-03:00 DEBUG 79319 --- [maxclubcard] [    Test worker] org.hibernate.SQL                        : alter table if exists transaction add constraint FKr0sq2j560yg77lg4pgkp98ld3 foreign key (id_card) references card
+Hibernate: alter table if exists transaction add constraint FKr0sq2j560yg77lg4pgkp98ld3 foreign key (id_card) references card
+2024-07-09T00:28:55.887-03:00  INFO 79319 --- [maxclubcard] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-09T00:28:56.174-03:00  INFO 79319 --- [maxclubcard] [    Test worker] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-07-09T00:28:56.493-03:00  INFO 79319 --- [maxclubcard] [    Test worker] b.c.d.m.d.t.r.TransactionRepositoryTest  : Started TransactionRepositoryTest in 3.284 seconds (process running for 4.446)
+2024-07-09T00:28:57.054-03:00 DEBUG 79319 --- [maxclubcard] [    Test worker] org.hibernate.SQL                        : insert into client (birth,document,email,gender,name,phone_number,id) values (?,?,?,?,?,?,default)
+Hibernate: insert into client (birth,document,email,gender,name,phone_number,id) values (?,?,?,?,?,?,default)
+2024-07-09T00:28:57.087-03:00 DEBUG 79319 --- [maxclubcard] [    Test worker] org.hibernate.SQL                        : insert into card (brand_card,card_number,id_client,expiration_date,type_card,id) values (?,?,?,?,?,default)
+Hibernate: insert into card (brand_card,card_number,id_client,expiration_date,type_card,id) values (?,?,?,?,?,default)
+2024-07-09T00:28:57.089-03:00 DEBUG 79319 --- [maxclubcard] [    Test worker] org.hibernate.SQL                        : insert into transaction (id_card,transaction_date,transaction_number,transaction_value,id) values (?,?,?,?,default)
+Hibernate: insert into transaction (id_card,transaction_date,transaction_number,transaction_value,id) values (?,?,?,?,default)
+</pre>
+</span>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard error</h2>
+<span class="code">
+<pre>WARNING: A Java agent has been loaded dynamically (/Users/diogenesrabelo/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.14.17/e3c251a39dc90badaf71c83427ba46840f219d8d/byte-buddy-agent-1.14.17.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.8</a> at 9 de jul. de 2024 00:29:09</p>
+</div>
+</div>
+</body>
+</html>
