@@ -7,6 +7,7 @@ import br.com.diogenes.maxclubcard.core.domain.transaction.TransactionOut;
 import br.com.diogenes.maxclubcard.core.gateway.CardGateway;
 import br.com.diogenes.maxclubcard.core.gateway.TransactionGateway;
 import br.com.diogenes.maxclubcard.core.usecase.TransactionUseCase;
+import br.com.diogenes.maxclubcard.core.utils.CardValidation;
 import br.com.diogenes.maxclubcard.entrypoint.exception.BusinessException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -33,22 +34,12 @@ public class TransactionUseCaseImpl implements TransactionUseCase {
     public TransactionOut registerTransaction(Transaction transaction) {
         log.info("Registering transaction: " + transaction.transactionNumber() + " " + transaction.transactionDate());
         var card = cardGateway.getCard(transaction.cardNumber());
-        if (!isCardValid(card)) {
+        if (!CardValidation.isCardValid(card.expirationDate(), card.brandCard())) {
             log.error("Transaction with card is invalid: " + transaction.cardNumber());
             throw new BusinessException("Transaction with card is invalid");
         }
         return transactionGateway.registerTransaction(transaction);
     }
 
-    private boolean isCardValid(CardOut card) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/yy");
 
-        try {
-            YearMonth cardExpiration = YearMonth.parse(card.expirationDate(), formatter);
-            YearMonth currentMonth = YearMonth.now();
-            return cardExpiration.isBefore(currentMonth) && card.brandCard().equals(MAXCLUBCARD);
-        } catch (DateTimeParseException e) {
-            throw new IllegalArgumentException("Invalid date format. Please use MM/yy.");
-        }
-    }
 }

@@ -40,12 +40,11 @@ class TransactionRepositoryTest {
                 .phoneNumber("77112234455").build();
         CardEntity cardEntity =  CardEntity.builder()
                 .cardNumber("1234567890123456")
-                .expirationDate("12/23")
+                .expirationDate("12/99")
                 .typeCard("Credit")
                 .brandCard("MAXCLUBCARD")
                 .client(clientEntity).build();
 
-        clientRepository.save(clientEntity);
         clientRepository.save(clientEntity);
         cardRepository.save(cardEntity);
 

@@ -4,6 +4,7 @@ import br.com.diogenes.maxclubcard.core.domain.card.Card;
 import br.com.diogenes.maxclubcard.core.domain.card.CardOut;
 import br.com.diogenes.maxclubcard.core.gateway.CardGateway;
 import br.com.diogenes.maxclubcard.core.usecase.CardUseCase;
+import br.com.diogenes.maxclubcard.core.utils.CardValidation;
 import br.com.diogenes.maxclubcard.entrypoint.exception.BusinessException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -27,22 +28,12 @@ public class CardUseCaseImpl implements CardUseCase {
     @Override
     public CardOut registerCard(Card card) {
         log.info("Registering card: " + card.cardNumber());
-        if(!isCardValid(card)) {
+        if(!CardValidation.isCardValid(card.expirationDate(), card.brandCard())) {
             log.error("Card is invalid: " + card.cardNumber());
             throw new BusinessException("Card is invalid");
         }
         return cardGateway.registerCard(card);
     }
 
-    private boolean isCardValid(Card card) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/yy");
 
-        try {
-            YearMonth cardExpiration = YearMonth.parse(card.expirationDate(), formatter);
-            YearMonth currentMonth = YearMonth.now();
-            return cardExpiration.isBefore(currentMonth) && card.brandCard().equals(MAXCLUBCARD);
-        } catch (DateTimeParseException e) {
-            throw new IllegalArgumentException("Invalid date format. Please use MM/yy.");
-        }
-    }
 }
