@@ -20,7 +20,7 @@ Siga os passos abaixo para executar a aplicação:
     ```
 
 2. **Construa e suba os contêineres com Docker Compose**:
-
+   Obs.: Build o projeto antes.
     ```sh
     docker-compose up --build
     ```
