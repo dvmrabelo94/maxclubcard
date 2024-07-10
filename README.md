@@ -79,3 +79,4 @@ Adicionar API (CRUD) para as bandeiras de cartões. Podendo adicionar mais ou de
 
 Adicionar Endpoint para consulta dos números da sorte.
 
+Melhorar a documentação.
