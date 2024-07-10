@@ -63,11 +63,10 @@ services:
   db:
     image: mysql:8.0
     restart: always
-    container_name: mysql_container
+    container_name: db
     environment:
-      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: maxclubcard
-      MYSQL_USER: root
       MYSQL_PASSWORD: password
     ports:
       - '3306:3306'
