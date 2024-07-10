@@ -33,7 +33,7 @@ public class TransactionUseCaseImpl implements TransactionUseCase {
         log.info("Registering transaction: " + transaction.transactionNumber() + " " + transaction.transactionDate());
         var card = cardGateway.getCard(transaction.cardNumber());
         var brandList = brandCardGateway.findAllByIsActiveTrue();
-        if (CardValidation.isValidCard(card.expirationDate(), card.brandCard(), brandList)) {
+        if (!CardValidation.isValidCard(card.expirationDate(), card.brandCard(), brandList)) {
             log.error("Transaction with card is invalid: " + transaction.cardNumber());
             throw new BusinessException("Transaction with card is invalid");
         }

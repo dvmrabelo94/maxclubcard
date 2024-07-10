@@ -10,6 +10,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Tag(name = "DrawNumberController", description = "Serviço responsável por fazer o sorteio (Teste).")
@@ -30,5 +31,5 @@ public interface DrawNumberController {
             description = "<u>\t<li>Endpoint só para facilitar os testes.</li>\n\t</u>"
     )
     @GetMapping("v1/drawnumber")
-    LuckyNumber executeTask();
+    ResponseEntity<LuckyNumber> executeTask();
 }

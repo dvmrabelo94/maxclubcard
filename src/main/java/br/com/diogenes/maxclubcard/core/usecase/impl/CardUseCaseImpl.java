@@ -26,7 +26,7 @@ public class CardUseCaseImpl implements CardUseCase {
     public CardOut registerCard(Card card) {
         log.info("Registering card: " + card.cardNumber());
         var brandList = brandCardGateway.findAllByIsActiveTrue();
-        if(CardValidation.isValidCard(card.expirationDate(), card.brandCard(), brandList)) {
+        if(!CardValidation.isValidCard(card.expirationDate(), card.brandCard(), brandList)) {
             log.error("Card is invalid: " + card.cardNumber());
             throw new BusinessException("Card is invalid");
         }

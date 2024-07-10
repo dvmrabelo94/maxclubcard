@@ -38,15 +38,15 @@ class TransactionRepositoryTest {
                 .gender("Masculino")
                 .email("joe@mail.com")
                 .phoneNumber("77112234455").build();
+        clientRepository.save(clientEntity);
         CardEntity cardEntity =  CardEntity.builder()
                 .cardNumber("1234567890123456")
                 .expirationDate("12/99")
                 .typeCard("Credit")
                 .brandCard("MAXCLUBCARD")
                 .client(clientEntity).build();
-
-        clientRepository.save(clientEntity);
         cardRepository.save(cardEntity);
+
 
         TransactionEntity transactionEntity = TransactionEntity.builder()
                 .transactionDate(LocalDateTime.now())
@@ -56,7 +56,7 @@ class TransactionRepositoryTest {
 
         transactionRepository.save(transactionEntity);
 
-        TransactionEntity foundTransaction = transactionRepository.findById(1l).get();
+        TransactionEntity foundTransaction = transactionRepository.findAll().iterator().next();
 
         assertNotNull(foundTransaction);
     }

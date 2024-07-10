@@ -7,6 +7,7 @@ import br.com.diogenes.maxclubcard.entrypoint.procuder.ProducerService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -22,13 +23,13 @@ public class DrawNumberControllerImpl implements DrawNumberController {
     @Value("${maxclub.topic}")
     private String topic;
 
-    public LuckyNumber executeTask() {
+    public ResponseEntity<LuckyNumber> executeTask() {
         var luckyNumber = luckyNumberUseCase.drawLuckyNumber();
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             var luckyNumberJson = objectMapper.writeValueAsString(luckyNumber);
             producerService.send(topic, luckyNumberJson);
-            return luckyNumber;
+            return ResponseEntity.ok(luckyNumber);
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
         }

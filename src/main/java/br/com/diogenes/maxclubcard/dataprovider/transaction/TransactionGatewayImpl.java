@@ -10,8 +10,10 @@ import br.com.diogenes.maxclubcard.dataprovider.luckynumber.mapper.LuckyNumberMa
 import br.com.diogenes.maxclubcard.dataprovider.transaction.mapper.TransactionMapper;
 import br.com.diogenes.maxclubcard.dataprovider.transaction.entity.TransactionEntity;
 import br.com.diogenes.maxclubcard.dataprovider.transaction.repository.TransactionRepository;
+import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -41,11 +43,21 @@ public class TransactionGatewayImpl implements TransactionGateway {
     public TransactionOut registerTransaction(Transaction transaction) {
         log.info("M=registerTransaction, message=Registering transaction");
         var card = cardGateway.getCardEntity(transaction.cardNumber());
-        var transactionEntity = TransactionMapper.toEntity(transaction, card);
-        transactionRepository.save(transactionEntity);
-        var luckyNumberList = luckyNumberGateway.insertAll(generateLuckyNumberList(transactionEntity), TransactionMapper.toEntity(transaction, card));
-        log.info("M=registerTransaction, message=Transaction registered with success, transactionEntity={}", transactionEntity);
-        return TransactionMapper.toDomain(luckyNumberList);
+        if (card == null) {
+            log.error("M=registerTransaction, message=Error registering transaction, exceptionMessage=Card not found");
+            throw new EntityNotFoundException("Card not found");
+        }
+        try {
+            var transactionEntity = TransactionMapper.toEntity(transaction, card);
+            transactionRepository.save(transactionEntity);
+            var luckyNumberList = luckyNumberGateway.insertAll(generateLuckyNumberList(transactionEntity), TransactionMapper.toEntity(transaction, card));
+            log.info("M=registerTransaction, message=Transaction registered with success, transactionEntity={}", transactionEntity);
+            return TransactionMapper.toDomain(luckyNumberList);
+        } catch (DataIntegrityViolationException e) {
+            log.error(EXCEPTION_MESSAGE, e.getMessage());
+            throw new DataIntegrityViolationException(EXCEPTION_MESSAGE + " Error saving transaction: Duplicate entry found.");
+        }
+
     }
 
     private List<LuckyNumberEntity> generateLuckyNumberList(TransactionEntity transaction) {

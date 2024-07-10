@@ -41,7 +41,7 @@ class DrawNumberControllerImplTest {
 
         when(luckyNumberUseCase.drawLuckyNumber()).thenReturn(luckyNumber);
 
-        LuckyNumber result = drawNumberController.executeTask();
+        LuckyNumber result = drawNumberController.executeTask().getBody();
 
         verify(luckyNumberUseCase).drawLuckyNumber();
         verify(producerService).send(any(), anyString());

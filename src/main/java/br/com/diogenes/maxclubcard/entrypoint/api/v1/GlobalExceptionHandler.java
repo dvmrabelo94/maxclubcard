@@ -1,6 +1,7 @@
 package br.com.diogenes.maxclubcard.entrypoint.api.v1;
 
 import br.com.diogenes.maxclubcard.entrypoint.exception.BusinessException;
+import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.ConstraintViolationException;
 import lombok.extern.slf4j.Slf4j;
@@ -40,6 +41,14 @@ public class GlobalExceptionHandler {
         logError(throwable);
         final var responseBody = DataOutput.with(ApiError.from("An unidentified error has occurred"));
         return ResponseEntity.internalServerError()
+            .body(responseBody);
+    }
+
+    @ExceptionHandler(EntityNotFoundException.class)
+    public ResponseEntity<DataOutput<ApiError>> handleEntityNotFoundException(final EntityNotFoundException exception) {
+        logError(exception);
+        final var responseBody = DataOutput.with(ApiError.from(NOT_FOUND.getReasonPhrase(), List.of(exception.getMessage())));
+        return ResponseEntity.status(NOT_FOUND)
             .body(responseBody);
     }
 

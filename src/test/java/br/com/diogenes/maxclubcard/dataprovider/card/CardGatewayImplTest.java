@@ -39,10 +39,12 @@ class CardGatewayImplTest {
 
     @Test
     void shouldCallRegisterCardInRepositoryWhenRegisterCardIsCalled() {
+        ClientEntity clientEntity = new ClientEntity(1L, "Diogenes", "12312312312", LocalDate.now(), "Masculino", "mail@mail.com", "77112234455");
         Card card = new Card("1234", "12/23", "Credit","MAXCLUBCARD", "1234");
         CardEntity cardEntity = new CardEntity(1l, "1234","12/23", "Credit","MAXCLUBCARD",
                 new ClientEntity(1l, "Joe", "1234", LocalDate.of(1990, 1, 1), "Masculino", "joe@mail.com", "77112234455"));
 
+        when(clientGateway.getClientEntity(anyString())).thenReturn(clientEntity);
         when(cardRepository.save(any())).thenReturn(cardEntity);
 
         cardGateway.registerCard(card);

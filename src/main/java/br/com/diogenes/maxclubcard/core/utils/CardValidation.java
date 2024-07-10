@@ -16,7 +16,7 @@ public class CardValidation {
             YearMonth cardExpiration = YearMonth.parse(expirationDate, formatter);
             YearMonth currentMonth = YearMonth.now();
             var brandsName = brands.stream().map(BrandEntity::getBrandName).toList();
-            return !cardExpiration.isBefore(currentMonth) || !brandsName.contains(brandCard);
+            return !cardExpiration.isBefore(currentMonth) || brandsName.contains(brandCard);
         } catch (DateTimeParseException e) {
             throw new IllegalArgumentException("Invalid date format. Please use MM/yy.");
         }

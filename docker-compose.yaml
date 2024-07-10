@@ -7,7 +7,9 @@ services:
     ports:
       - "8080:8080"
     environment:
-      SPRING_PROFILES_ACTIVE: default
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/maxclubcard
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: password
     depends_on:
       - db
 
@@ -61,11 +63,12 @@ services:
   db:
     image: mysql:8.0
     restart: always
+    container_name: mysql_container
     environment:
-      MYSQL_DATABASE: 'maxclubcard'
-      MYSQL_USER: 'maxclub'
-      MYSQL_PASSWORD: 'password'
-      MYSQL_ROOT_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: maxclubcard
+      MYSQL_USER: root
+      MYSQL_PASSWORD: password
     ports:
       - '3306:3306'
     expose:
